@@ -1,0 +1,51 @@
+<html>
+    <head>
+         aplicacion<br> 
+    </head>
+    <body>
+        cuerpo de la pagina
+        <script>
+            console.log('veamos')
+           //lista a los usuarios
+            fetch('http://jsonplaceholder.typicode.com/users')
+            .then(function(response) {
+            return response.json();
+            
+        })
+        .then(function(myJson) {
+        var divOut = document.getElementById('txtOut');
+        var allStudents = myJson;
+        var txtOut = "Usuarios: <br/><br/>";
+        for (var k in allStudents) {
+        txtOut += `<b> IdUser: ${allStudents[k].id}</b><br />`;
+        txtOut += `nombre: ${allStudents[k].name}<br /><br/>`;
+        // txtOut += `title: ${allStudents[k].title}<br />`;
+        // txtOut += `body: ${allStudents[k].body}<br />`;
+      //txtOut += `Average: ${allStudents[k].grades}<br />`;
+      //txtOut += `<img src="${allStudents[k].pic}"><hr />`;
+    }
+    divOut.innerHTML = txtOut;
+  });
+
+//     fetch('https://www.hatchways.io/api/assessment/students')
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(myJson) {
+//     var divOut = document.getElementById('txtOut');
+//     var allStudents = myJson.students;
+//     var txtOut = "";
+//     for (var k in allStudents) {
+//       txtOut += `<b>${allStudents[k].firstName}</b><br />`;
+//       txtOut += `email: ${allStudents[k].email}<br />`;
+//       txtOut += `Company: ${allStudents[k].company}<br />`;
+//       txtOut += `Skill: ${allStudents[k].skill}<br />`;
+//       txtOut += `Average: ${allStudents[k].grades}<br />`;
+//       txtOut += `<img src="${allStudents[k].pic}"><hr />`;
+//     }
+//     divOut.innerHTML = txtOut;
+//   });
+    </script>
+    <div id="txtOut"></div> 
+    </body>
+</html>
