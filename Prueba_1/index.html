@@ -1,9 +1,8 @@
 <html>
     <head>
-         aplicacion<br> 
     </head>
     <body>
-        cuerpo de la pagina
+        <!-- cuerpo de la pagina -->
         <script>
             console.log('veamos')
            //lista a los usuarios
@@ -14,38 +13,325 @@
         })
         .then(function(myJson) {
         var divOut = document.getElementById('txtOut');
-        var allStudents = myJson;
+        var usuarios = myJson;
         var txtOut = "Usuarios: <br/><br/>";
-        for (var k in allStudents) {
-        txtOut += `<b> IdUser: ${allStudents[k].id}</b><br />`;
-        txtOut += `nombre: ${allStudents[k].name}<br /><br/>`;
-        // txtOut += `title: ${allStudents[k].title}<br />`;
-        // txtOut += `body: ${allStudents[k].body}<br />`;
-      //txtOut += `Average: ${allStudents[k].grades}<br />`;
-      //txtOut += `<img src="${allStudents[k].pic}"><hr />`;
+        for (var k in usuarios) {
+        txtOut += `<b> IdUser: ${usuarios[k].id}</b><br />`;
+        txtOut += `nombre: ${usuarios[k].name}<br /><br/>`;
+        //poniendo el valor de cada usuario
+        if(k==0){
+            var contador1=0;
+            //ponemos en el div con uno el nombre antes de que se haga click
+            document.getElementById('uno').innerHTML = usuarios[k].name;
+            //aqui ya es cuando se hace click
+            var uno = document.getElementById("uno");//encontramos el id con 1
+            var elemento = uno;
+            
+            elemento.onclick = function(){
+                ocultar3();
+                contador1++;
+                if(contador1==1){
+                document.getElementById('uno').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('uno').innerHTML += `UserName: ${usuarios[0].username}<br/>`;
+                document.getElementById('uno').innerHTML += `Email: ${usuarios[0].email}<br/>`;
+                document.getElementById('uno').innerHTML += `telefono: ${usuarios[0].phone}<br/>`;
+                }
+                
+                //document.getElementById('uno').innerHTML += contador;
+                
+            };
+            document.getElementById('uno').innerHTML += `<br/>`;
+           
+        }
+        else if(k==1){
+            document.getElementById('dos').innerHTML = `<br/>`+usuarios[k].name;
+            
+             //aqui ya es cuando se hace click
+            var dos = document.getElementById("dos");//encontramos el id con 1
+            var elemento = dos;
+            var contador2=0;
+            elemento.onclick = function(){
+                ocultar3();
+                contador2++;
+                if(contador2==1){
+                    document.getElementById('dos').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('dos').innerHTML += `UserName: ${usuarios[1].username}<br/>`;
+                document.getElementById('dos').innerHTML += `Email: ${usuarios[1].email}<br/>`;
+                document.getElementById('dos').innerHTML += `telefono: ${usuarios[1].phone}<br/>`;
+                }
+               
+                
+            };
+            document.getElementById('dos').innerHTML += `<br/>`;
+        }
+        else if(k==2){
+            document.getElementById('tres').innerHTML = `<br/>`+usuarios[k].name;
+            var contador3=0;
+             //aqui ya es cuando se hace click
+             var tres = document.getElementById("tres");//encontramos el id con 1
+            var elemento = tres;
+            elemento.onclick = function(){
+                ocultar3();
+                contador3++;
+                if(contador3==1){
+                    document.getElementById('tres').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('tres').innerHTML += `UserName: ${usuarios[2].username}<br/>`;
+                document.getElementById('tres').innerHTML += `Email: ${usuarios[2].email}<br/>`;
+                document.getElementById('tres').innerHTML += `telefono: ${usuarios[2].phone}<br/>`;
+                }
+                
+                
+            };
+            document.getElementById('tres').innerHTML += `<br/>`;
+        }
+        else if(k==3){
+            document.getElementById('cuatro').innerHTML = `<br/>`+usuarios[k].name;
+            var contador4=0;
+             //aqui ya es cuando se hace click
+            var cuatro= document.getElementById("cuatro");//encontramos el id con 1
+            var elemento = cuatro;
+            elemento.onclick = function(){
+                ocultar3();
+                contador4++;
+                if(contador4==1){ 
+                document.getElementById('cuatro').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('cuatro').innerHTML += `UserName: ${usuarios[3].username}<br/>`;
+                document.getElementById('cuatro').innerHTML += `Email: ${usuarios[3].email}<br/>`;
+                document.getElementById('cuatro').innerHTML += `telefono: ${usuarios[3].phone}<br/>`;
+            }
+               
+            };
+            document.getElementById('cuatro').innerHTML += `<br/>`;
+        }
+        else if(k==4){
+            document.getElementById('cinco').innerHTML = `<br/>`+usuarios[k].name;
+            var contador5=0;
+              //aqui ya es cuando se hace click
+              var cinco= document.getElementById("cinco");//encontramos el id con 1
+            var elemento = cinco;
+            elemento.onclick = function(){
+                ocultar3();
+                contador5++;
+                if(contador5==1){
+                    document.getElementById('cinco').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('cinco').innerHTML += `UserName: ${usuarios[4].username}<br/>`;
+                document.getElementById('cinco').innerHTML += `Email: ${usuarios[4].email}<br/>`;
+                document.getElementById('cinco').innerHTML += `telefono: ${usuarios[4].phone}<br/>`;
+                }
+                
+            };
+            document.getElementById('cinco').innerHTML += `<br/>`;
+        }
+        else if(k==5){
+            document.getElementById('seis').innerHTML = `<br/>`+usuarios[k].name;
+            var contador6=0;
+             //aqui ya es cuando se hace click
+            var seis= document.getElementById("seis");//encontramos el id con 1
+            var elemento = seis;
+            elemento.onclick = function(){
+                ocultar3();
+                contador6++;
+                if(contador6==1){
+                    document.getElementById('seis').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('seis').innerHTML += `UserName: ${usuarios[5].username}<br/>`;
+                document.getElementById('seis').innerHTML += `Email: ${usuarios[5].email}<br/>`;
+                document.getElementById('seis').innerHTML += `telefono: ${usuarios[5].phone}<br/>`;
+                }
+               
+            };
+            document.getElementById('seis').innerHTML += `<br/>`;
+        }
+        else if(k==6){
+            document.getElementById('siete').innerHTML = `<br/>`+usuarios[k].name;
+            var contador7=0;
+             //aqui ya es cuando se hace click
+            var siete= document.getElementById("siete");//encontramos el id con 1
+            var elemento = siete;
+            elemento.onclick = function(){
+                ocultar3();
+                contador7++;
+                if(contador7==1){
+                    document.getElementById('siete').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('siete').innerHTML += `UserName: ${usuarios[6].username}<br/>`;
+                document.getElementById('siete').innerHTML += `Email: ${usuarios[6].email}<br/>`;
+                document.getElementById('siete').innerHTML += `telefono: ${usuarios[6].phone}<br/>`;
+                }
+              
+            };
+            document.getElementById('siete').innerHTML += `<br/>`;
+        }
+        else if(k==7){
+            document.getElementById('ocho').innerHTML = `<br/>`+usuarios[k].name;
+            var contador8=0;
+                         //aqui ya es cuando se hace click
+            var ocho= document.getElementById("ocho");//encontramos el id con 1
+            var elemento = ocho;
+            elemento.onclick = function(){
+                ocultar3();
+                contador8++;
+                if(contador8==1){
+                    document.getElementById('ocho').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('ocho').innerHTML += `UserName: ${usuarios[7].username}<br/>`;
+                document.getElementById('ocho').innerHTML += `Email: ${usuarios[7].email}<br/>`;
+                document.getElementById('ocho').innerHTML += `telefono: ${usuarios[7].phone}<br/>`;
+                }
+               
+            };
+            document.getElementById('ocho').innerHTML += `<br/>`;
+        }   
+        else if(k==8){
+            document.getElementById('nueve').innerHTML = `<br/>`+usuarios[k].name;
+            var contador9=0;
+            var nueve= document.getElementById("nueve");//encontramos el id con 1
+            var elemento = nueve;
+            elemento.onclick = function(){
+                ocultar3();
+                contador9++;
+                if(contador9==1){
+                    document.getElementById('nueve').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('nueve').innerHTML += `UserName: ${usuarios[8].username}<br/>`;
+                document.getElementById('nueve').innerHTML += `Email: ${usuarios[8].email}<br/>`;
+                document.getElementById('nueve').innerHTML += `telefono: ${usuarios[8].phone}<br/>`;
+                }
+               
+            };
+            document.getElementById('nueve').innerHTML += `<br/>`;
+        }
+        else if(k==9){
+            document.getElementById('diez').innerHTML = `<br/>`+usuarios[k].name;
+            var contador10=0;
+            var diez= document.getElementById("diez");//encontramos el id con 1
+            var elemento = diez;
+            elemento.onclick = function(){
+                ocultar3();
+                contador10++;
+                if(contador10==1){
+                    document.getElementById('diez').innerHTML += `<b>informacion: <br/>`;
+                document.getElementById('diez').innerHTML += `UserName: ${usuarios[9].username}<br/>`;
+                document.getElementById('diez').innerHTML += `Email: ${usuarios[9].email}<br/>`;
+                document.getElementById('diez').innerHTML += `telefono: ${usuarios[9].phone}<br/>`;
+                }
+                
+            };
+            document.getElementById('diez').innerHTML += `<br/>`;
+        }
+        
+        //var elemento = usuarios[k].name;
+        //elemento.onclick = function(){
+        //mostrar3();
+        //alert(this.innerHTML.trim());
+        //};
+     
     }
     divOut.innerHTML = txtOut;
+    //divOut.onclick=alerta;
   });
 
-//     fetch('https://www.hatchways.io/api/assessment/students')
-//   .then(function(response) {
-//     return response.json();
-//   })
-//   .then(function(myJson) {
-//     var divOut = document.getElementById('txtOut');
-//     var allStudents = myJson.students;
-//     var txtOut = "";
-//     for (var k in allStudents) {
-//       txtOut += `<b>${allStudents[k].firstName}</b><br />`;
-//       txtOut += `email: ${allStudents[k].email}<br />`;
-//       txtOut += `Company: ${allStudents[k].company}<br />`;
-//       txtOut += `Skill: ${allStudents[k].skill}<br />`;
-//       txtOut += `Average: ${allStudents[k].grades}<br />`;
-//       txtOut += `<img src="${allStudents[k].pic}"><hr />`;
-//     }
-//     divOut.innerHTML = txtOut;
-//   });
+    
+    //ponemos la funcion para que muestre o cierre lo que necesitemos
+    function mostrar() {
+            div = document.getElementById('flotante');
+            div.style.display = '';
+        }
+
+        function cerrar() {
+            div = document.getElementById('flotante');
+            div.style.display = 'none';
+        }
+    function ocultar(){
+        document.getElementById('obj2').style.display = 'none';
+    }
+    function mostrar(){
+    document.getElementById('obj2').style.display = 'block';
+    }
+
+    function ocultar2(){
+        document.getElementById('obj1').style.display = 'none';
+    }
+    function mostrar2(){
+
+    document.getElementById('obj1').style.display = 'block';
+    }
+
+    function ocultar3(){
+        document.getElementById('obj3').style.display = 'none';
+    }
+    function mostrar3(){
+
+        document.getElementById('obj3').style.display = 'block';
+    }
+
+    //funcion para agregar botones con js
+    function agregarBoton(htmlID, texto, funcion) { 
+    	var o=document.getElementById(htmlID); 
+    	o.html+='<input type="button" value="'+texto+'" onclick="'+funcion+'">'; 
+    } 
+
+    //asignar elementos para mostrar en los diferentes usuarios
+    function asignarEventos() {
+
+   // agregarBoton('miDiv', 'Saludar', 'alert(\'Hola!\')');
+   
+    var uno = document.getElementById("uno");
+    var dos = document.getElementById("dos");
+    var tres = document.getElementById("tres");
+
+    var arreglo = [uno, dos, tres];
+
+    for (var i = 0; i < arreglo.length; i++) {
+
+        var elemento = arreglo[i];
+  
+        elemento.onclick = function(){
+
+        alert(this.innerHTML.trim());
+  };
+
+}
+
+}
+
+asignarEventos();
+
+
     </script>
-    <div id="txtOut"></div> 
+    <div><h1> Usuarios:<br/> </h1></div>
+     <div id="uno" onclick="asignarEventos()">
+        <div id="miDiv"></div> 
+        <!-- <a id="info1"></a> -->
+        <button type="button" >veamos</button>
+        <button type="button">cerrarsss</button>
+     </div>
+     <div id="dos" onclick="asignarEventos()">
+        <div id="miDiv"></div> 
+        <!-- <a id="info1"></a> -->
+        <button type="button" >veamos</button>
+        <button type="button">cerrarsss</button>
+     </div>
+      <a id="tres"> 
+      </a>
+      <a id="cuatro"> 
+      </a>
+      <a id="cinco">
+      </a>
+      <a id="seis">
+      </a>
+      <a id="siete">
+      </a>
+      <a id="ocho">
+      </a>
+      <a id="nueve">
+      </a>
+      <a id="diez">
+      </a>
+
+    <div id="txtOut"></div>
+    <div id="obj2">Bloque de texto obj2</div> 
+    <div id="obj1">
+        <a href="javascript:void(0);" onclick="mostrar()">tienes que aparecer</a>
+    </div> 
+    <div id="obj3">objeeeetooooo 3 </div> 
+    <button type="button" onclick="mostrar()">Mostrar</button>
+    <button type="button" onclick="ocultar()">cerrar</button>
     </body>
 </html>
