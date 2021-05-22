@@ -28,16 +28,23 @@
             var elemento = uno;
             
             elemento.onclick = function(){
-                ocultar3();
+                ocultar3();//este no se usa, eliminar esto despues
                 contador1++;
                 if(contador1==1){
                 document.getElementById('uno').innerHTML += `<b>informacion: <br/>`;
                 document.getElementById('uno').innerHTML += `UserName: ${usuarios[0].username}<br/>`;
                 document.getElementById('uno').innerHTML += `Email: ${usuarios[0].email}<br/>`;
                 document.getElementById('uno').innerHTML += `telefono: ${usuarios[0].phone}<br/>`;
-                }
+                //agregando botones
+                //CREANDO PRIMER BOTON
+                const button = document.createElement('button'); 
+                button.type = 'button'; 
+                button.innerText = 'POSTS'; 
+                document.getElementById('uno').appendChild(button);
+                var o=document.getElementById('uno'); 
                 
-                //document.getElementById('uno').innerHTML += contador;
+
+                }
                 
             };
             document.getElementById('uno').innerHTML += `<br/>`;
@@ -260,12 +267,6 @@
 
         document.getElementById('obj3').style.display = 'block';
     }
-
-    //funcion para agregar botones con js
-    function agregarBoton(htmlID, texto, funcion) { 
-    	var o=document.getElementById(htmlID); 
-    	o.html+='<input type="button" value="'+texto+'" onclick="'+funcion+'">'; 
-    } 
 
     //asignar elementos para mostrar en los diferentes usuarios
     function asignarEventos() {
