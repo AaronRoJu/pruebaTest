@@ -41,8 +41,13 @@
                 button.type = 'button'; 
                 button.innerText = 'POSTS'; 
                 document.getElementById('uno').appendChild(button);
-                var o=document.getElementById('uno'); 
                 
+                const button2 = document.createElement('button'); 
+                button2.type = 'button'; 
+                button2.innerText = 'JEJE'; 
+                document.getElementById('uno').appendChild(button2);
+                // var list = document.getElementById("uno");
+                // list.insertBefore(button2, list.childNodes[0]);
 
                 }
                 
@@ -298,16 +303,8 @@ asignarEventos();
     </script>
     <div><h1> Usuarios:<br/> </h1></div>
      <div id="uno" onclick="asignarEventos()">
-        <div id="miDiv"></div> 
-        <!-- <a id="info1"></a> -->
-        <button type="button" >veamos</button>
-        <button type="button">cerrarsss</button>
      </div>
-     <div id="dos" onclick="asignarEventos()">
-        <div id="miDiv"></div> 
-        <!-- <a id="info1"></a> -->
-        <button type="button" >veamos</button>
-        <button type="button">cerrarsss</button>
+     <div id="dos" onclick="asignarEventos()"> 
      </div>
       <a id="tres"> 
       </a>
