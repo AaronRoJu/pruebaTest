@@ -124,8 +124,8 @@ if(k==0){
              //**********aqui se pondra el codigo del formulario
                 var my_form = document.createElement('form');
                 my_form.name='myForm';
-                //my_form.method='POST';
-                //my_form.action='http://www.another_page.com/index.htm';
+                my_form.method='POST';
+                my_form.action='https://jsonplaceholder.typicode.com/users/1/todos';
                 //AGREGANDO EL TITULO EN UN CUADRO DE TEXTO
                 my_tb=document.createElement('INPUT');
                 my_tb.type='TEXT';
@@ -135,26 +135,23 @@ if(k==0){
                 my_form.appendChild(my_tb);
 
                 //AGREGANDO CHECKBOX
-                my_tb=document.createElement('INPUT');
-                my_tb.type='checkbox';
-                my_tb.placeholder='marca si has completado la tarea';
-                my_tb.name='completado';
+                check=document.createElement('INPUT');
+                check.type='checkbox';
+                //check.value='marca de completado';
+                check.name='completado';
                 //my_tb.value='Values of my Input';
-                my_form.appendChild(my_tb);
+                my_form.appendChild(check);
+                //document.getElementById('uno').innerHTML += `<br/>`;
+                //agregando boton
+                button3=document.createElement('input');
+                button3.type = 'submit'; 
+                button3.value = 'guardar'; 
+                my_form.appendChild(button3);
 
                 document.getElementById('uno').appendChild(my_form);
+                document.getElementById('uno').innerHTML += `---------------------`;
                 //my_form.submit();
              //document.getElementsByName("form1").style.visibility="visible";
-             function hideshow()
-             {
-                 var frm=document.form1;
-                 if(frm.style.display=="block"){frm.style.display="none"}
-                else{
-                    if(frm.style.display=="none"){frm.style.display="block"}
-
-                    }
-             }
-
          }//termina el cierre de las llaves del boton2
      }
      
