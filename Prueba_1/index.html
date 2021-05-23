@@ -12,12 +12,12 @@
             
         })
         .then(function(myJson) {
-        var divOut = document.getElementById('txtOut');
+        //var divOut = document.getElementById('txtOut');
         var usuarios = myJson;
         var txtOut = "Usuarios: <br/><br/>";
         for (var k in usuarios) {
-        txtOut += `<b> IdUser: ${usuarios[k].id}</b><br />`;
-        txtOut += `nombre: ${usuarios[k].name}<br /><br/>`;
+       //txtOut += `<b> IdUser: ${usuarios[k].id}</b><br />`;
+        //txtOut += `nombre: ${usuarios[k].name}<br /><br/>`;
         //poniendo el valor de cada usuario
         if(k==0){
             var contador1=0;
@@ -41,10 +41,14 @@
                 button.type = 'button'; 
                 button.innerText = 'POSTS'; 
                 document.getElementById('uno').appendChild(button);
+                //este es la funcion de cuando se le da click al botom ahora hay que poner los datos del post
+                button.onclick=function(){
+                    document.getElementById('uno').innerHTML += `<br/>aqui va la informacion del POST<br/>`;
+                };
                 
                 const button2 = document.createElement('button'); 
                 button2.type = 'button'; 
-                button2.innerText = 'JEJE'; 
+                button2.innerText = 'TODOS'; 
                 document.getElementById('uno').appendChild(button2);
                 // var list = document.getElementById("uno");
                 // list.insertBefore(button2, list.childNodes[0]);
@@ -228,18 +232,12 @@
             document.getElementById('diez').innerHTML += `<br/>`;
         }
         
-        //var elemento = usuarios[k].name;
-        //elemento.onclick = function(){
-        //mostrar3();
-        //alert(this.innerHTML.trim());
-        //};
-     
+       
     }
     divOut.innerHTML = txtOut;
-    //divOut.onclick=alerta;
+    
   });
 
-    
     //ponemos la funcion para que muestre o cierre lo que necesitemos
     function mostrar() {
             div = document.getElementById('flotante');
@@ -276,8 +274,6 @@
     //asignar elementos para mostrar en los diferentes usuarios
     function asignarEventos() {
 
-   // agregarBoton('miDiv', 'Saludar', 'alert(\'Hola!\')');
-   
     var uno = document.getElementById("uno");
     var dos = document.getElementById("dos");
     var tres = document.getElementById("tres");
