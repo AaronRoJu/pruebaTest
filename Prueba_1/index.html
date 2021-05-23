@@ -41,9 +41,7 @@
                 button.innerText = 'POSTS'; 
                 document.getElementById('uno').appendChild(button);
                 //este es la funcion de cuando se le da click al botom ahora hay que poner los datos del post
-                button.onclick=function(){
-                    //poniendo una variable auxiliar para terminar de poner los datos que nos faltan de los posts
-                    
+                button.onclick=function(){//cuando se hace click en el boton POSTS
                     //trayendo los datos de POST 
                     fetch('https://jsonplaceholder.typicode.com/users/1/posts')
                     .then(function(response) {
@@ -83,15 +81,17 @@
                         }       
                             
                          //ESTE IF Y FOR ES PARA PONER AQUELLOS  POSTS EN CASO DE QUE HAYAN MAS POSTS QUE COMENTARIOS YA QUE EL ANTERIOR FOR SOLO LLEGA HASTA EL INDICE
-                        if(k==longitudcomentarios-1){
-                            let i=0;
+                            if(longitudpost>longitudcomentarios){//si es mayor quiere decir que hay que agregar los posts que no tienes comentarios asociados abajo de los que si tienen
+                                if(k==longitudcomentarios-1){
+                                let i=0;
                                           for (i=longitudcomentarios; i < longitudpost; i++) {
                                                 document.getElementById('uno').innerHTML += `<b> IdUser: ${usuarios[i].userId}</b><br />`;
                                                 document.getElementById('uno').innerHTML += `<b> Id: ${usuarios[i].id}</b><br />`;
                                                 document.getElementById('uno').innerHTML += `<b> title: ${usuarios[i].title}</b><br />`;
                                                 document.getElementById('uno').innerHTML += `<b> body: ${usuarios[i].body}</b><br/><br/>`;
                                             }
-                          }          
+                                        }
+                                }          
                         }  //finaliza el for primero   
                        
                         //}  
@@ -101,18 +101,33 @@
                     //AGREGANDO LA INFORMACION CUANDO SE LE DE CLICK EN EL BOTON DE POST
                     document.getElementById('uno').innerHTML += `<br/>LISTA DE POSTS: <br/><br/>`;
 
-                    
-                   
-
                 };
                 
                 const button2 = document.createElement('button'); 
                 button2.type = 'button'; 
                 button2.innerText = 'TODOS'; 
                 document.getElementById('uno').appendChild(button2);
-                
-                   
+                    button2.onclick=function(){//aqui empieza cuando le damos click al boton de TODOS
+                        
+                        //aqui pondremos la el fetch para traer las TAREAS
+                        fetch('https://jsonplaceholder.typicode.com/users/1/todos')//trayendo las tareas con PostId=1 
+                        .then(function(response) {
+                        return response.json();   
+                        })
+                        .then(function(myJson2) {
+                            document.getElementById('uno').innerHTML += `<b><br/> Lista de Tareas:<br/>`;
+                            var tareas = myJson2;
+                            //document.getElementById('uno').innerHTML += `<br/>a ver entro este demsadre`;
+                            for (let z=tareas.length-1; z > -1; z--) 
+                                    {
+                                            document.getElementById('uno').innerHTML += `<b><br/> IdUser: ${tareas[z].userId}</b><br />`;
+                                            document.getElementById('uno').innerHTML += `<b> Id: ${tareas[z].id}</b><br />`;
+                                            document.getElementById('uno').innerHTML += `<b> title: ${tareas[z].title}</b><br />`;
+                                            document.getElementById('uno').innerHTML += `<b> completed: ${tareas[z].completed}</b><br/>`;
+                                    }
+                        });
 
+                    }//termina el cierre de las llaves del boton2
                 }
                 
             };
