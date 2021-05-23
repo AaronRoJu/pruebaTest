@@ -337,23 +337,3 @@ function mostrar3(){
 document.getElementById('obj3').style.display = 'block';
 }
 
-//asignar elementos para mostrar en los diferentes usuarios
-function asignarEventos() {
-
-var uno = document.getElementById("uno");
-var dos = document.getElementById("dos");
-var tres = document.getElementById("tres");
-
-var arreglo = [uno, dos, tres];
-
-for (var i = 0; i < arreglo.length; i++) {
-
-var elemento = arreglo[i];
-
-elemento.onclick = function(){
-
-alert(this.innerHTML.trim());
-};
-}
-}
-asignarEventos();
