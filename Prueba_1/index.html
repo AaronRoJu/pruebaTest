@@ -8,8 +8,7 @@
            //lista a los usuarios
             fetch('http://jsonplaceholder.typicode.com/users')
             .then(function(response) {
-            return response.json();
-            
+            return response.json();   
         })
         .then(function(myJson) {
         //var divOut = document.getElementById('txtOut');
@@ -43,19 +42,60 @@
                 document.getElementById('uno').appendChild(button);
                 //este es la funcion de cuando se le da click al botom ahora hay que poner los datos del post
                 button.onclick=function(){
-                    document.getElementById('uno').innerHTML += `<br/>aqui va la informacion del POST<br/>`;
+                    //trayendo los datos de POST 
+                    fetch('https://jsonplaceholder.typicode.com/users/1/posts')
+                    .then(function(response) {
+                    return response.json();   
+                    })
+                    .then(function(myJson) {
+                       //var divOut = document.getElementById('txtOut');
+                        var usuarios = myJson;
+                        var txtOut = "LISTA DE POSTS: <br/><br/>";
+                        for (var k in usuarios) {
+                        document.getElementById('uno').innerHTML += `<b> IdUser: ${usuarios[k].userId}</b><br />`;
+                        document.getElementById('uno').innerHTML += `<b> Id: ${usuarios[k].id}</b><br />`;
+                        document.getElementById('uno').innerHTML += `<b> title: ${usuarios[k].title}</b><br />`;
+                        document.getElementById('uno').innerHTML += `<b> body: ${usuarios[k].body}</b><br/><br/>`;
+                      
+
+                        
+                        }  //finaliza el for primero
+                    });
+                    //AGREGANDO LA INFORMACION CUANDO SE LE DE CLICK EN EL BOTON DE POST
+                    document.getElementById('uno').innerHTML += `<br/>LISTA DE POSTS: <br/><br/>`;
+
+                     //aqui pondremos la el fetch para traer los comentarios
+            fetch('https://jsonplaceholder.typicode.com/post/1/comments')//trayendo los comentarios del post con PostId=1 
+                        .then(function(response) {
+                        return response.json();   
+                        })
+                        .then(function(myJson) {
+                        //var divOut = document.getElementById('txtOut');
+                        var comentarios = myJson;
+                        for (var k in comentarios) {
+                        document.getElementById('uno').innerHTML += `<p><p><p><p><p><p><i> PostId: ${comentarios[k].postId}</b><br />`;
+                        document.getElementById('uno').innerHTML += `<p><p><p><p><p><p><i> Id: ${comentarios[k].id}</b><br />`;
+                        document.getElementById('uno').innerHTML += `<p><p><p><p><p><p><i> email: ${comentarios[k].name}</b><br />`;
+                        document.getElementById('uno').innerHTML += `<p><p><p><p><p><p> body:<i> ${comentarios[k].body}</b><br/><br/>`;
+                     
+                        }  
+                        });//aqui finaliza el bucle de los comentarios 
+                    //document.getElementById('uno').innerHTML += `<br/>LISTA DE COMENTARIOS: <br/><br/>`;
+
                 };
                 
                 const button2 = document.createElement('button'); 
                 button2.type = 'button'; 
                 button2.innerText = 'TODOS'; 
                 document.getElementById('uno').appendChild(button2);
-                // var list = document.getElementById("uno");
-                // list.insertBefore(button2, list.childNodes[0]);
+                
+                   
 
                 }
                 
             };
+           
+
             document.getElementById('uno').innerHTML += `<br/>`;
            
         }
@@ -288,11 +328,8 @@
 
         alert(this.innerHTML.trim());
   };
-
 }
-
 }
-
 asignarEventos();
 
 
