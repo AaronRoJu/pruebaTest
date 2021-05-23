@@ -1,4 +1,4 @@
-console.log('veamos')
+
 //lista a los usuarios
  fetch('http://jsonplaceholder.typicode.com/users')
  .then(function(response) {
@@ -120,6 +120,40 @@ if(k==0){
                                  document.getElementById('uno').innerHTML += `<b> completed: ${tareas[z].completed}</b><br/>`;
                          }
              });
+             document.getElementById('uno').innerHTML += `<br/> -------------------<h3>formulario<br/> Ingresar nueva tarea<h3/>`;
+             //**********aqui se pondra el codigo del formulario
+                var my_form = document.createElement('form');
+                my_form.name='myForm';
+                //my_form.method='POST';
+                //my_form.action='http://www.another_page.com/index.htm';
+                //AGREGANDO EL TITULO EN UN CUADRO DE TEXTO
+                my_tb=document.createElement('INPUT');
+                my_tb.type='TEXT';
+                my_tb.placeholder='ingresa titulo de tarea';
+                my_tb.name='myInput';
+                //my_tb.value='Values of my Input';
+                my_form.appendChild(my_tb);
+
+                //AGREGANDO CHECKBOX
+                my_tb=document.createElement('INPUT');
+                my_tb.type='checkbox';
+                my_tb.placeholder='marca si has completado la tarea';
+                my_tb.name='completado';
+                //my_tb.value='Values of my Input';
+                my_form.appendChild(my_tb);
+
+                document.getElementById('uno').appendChild(my_form);
+                //my_form.submit();
+             //document.getElementsByName("form1").style.visibility="visible";
+             function hideshow()
+             {
+                 var frm=document.form1;
+                 if(frm.style.display=="block"){frm.style.display="none"}
+                else{
+                    if(frm.style.display=="none"){frm.style.display="block"}
+
+                    }
+             }
 
          }//termina el cierre de las llaves del boton2
      }
