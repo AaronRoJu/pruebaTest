@@ -1,0 +1,45 @@
+#encabezado {
+    background-color: #ffee00; 
+  }
+#editorial {
+    background-color: #ae00ff; 
+  }
+
+  #identidad {
+    background-color: #ae00ff; 
+  }
+
+  #nombre {
+    background-color: #ae00ff; 
+  }
+
+  #primera {
+    background-color: #ae00ff; 
+  }
+  #personaje {
+    background-color: #ae00ff; 
+  }
+  table{
+    table-layout: fixed;
+    width: 1200px;
+    margin: 0 auto;/*es para que este centrada*/
+}
+head{
+ background-color: #FF0000; 
+}
+
+th, td {
+    border: 3px solid rgb(0, 255, 34);
+    text-align: center;
+    font: oblique bold 120% cursive;
+    width: 200px; /*le da el ancho especifico a las tablas*/
+    word-wrap: break-word;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #3369ff;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #a195e4;
+  }
